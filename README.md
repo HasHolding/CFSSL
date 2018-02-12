@@ -16,3 +16,5 @@ cat /srv/hasICA.pem /srv/hasCA.pem > /srv/hasCA-chain.pem
 
 openssl verify -CAfile hasCA-chain.pem /serv/destek.pem
 cat /srv/hasICA.pem /srv/hasCA.pem > /srv/hasCA-chain.pem
+
+https://blog.propellered.com/2017/11/13/cfssl_setting_up/
