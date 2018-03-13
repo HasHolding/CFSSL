@@ -1,5 +1,6 @@
 ﻿# cfssl
 
+docker run -ti -v c:\docker/srv:/shared cfssl /bin/sh
 cfssl gencert -initca ca_csr.json  | cfssljson -bare /srv/hasCA
 
 cfssl gencert -ca /srv/hasCA.pem -ca-key /srv/hasCA-key.pem -config="config.json" -profile="intermediate" ica-csr.json | cfssljson -bare /srv/hasICA
