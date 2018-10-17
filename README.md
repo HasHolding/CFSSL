@@ -1,11 +1,11 @@
-﻿# cfssl
+# CFSSL
 
 docker run -ti -v c:\docker/srv:/shared cfssl /bin/sh
-cfssl gencert -initca ca_csr.json  | cfssljson -bare /srv/hasCA
+cfssl gencert -initca ca_csr.json  | cfssljson -bare /shared/hasCA
 
-cfssl gencert -ca /srv/hasCA.pem -ca-key /srv/hasCA-key.pem -config="config.json" -profile="intermediate" ica-csr.json | cfssljson -bare /srv/hasICA
+cfssl gencert -ca /srv/hasCA.pem -ca-key /shared/hasCA-key.pem -config="config.json" -profile="intermediate" ica-csr.json | cfssljson -bare /shared/hasICA
 
-cfssl gencert -ca /srv/hasICA.pem -ca-key /srv/hasICA-key.pem -config=config.json -profile="server" destek.csr.json |cfssljson -bare /srv/destek
+cfssl gencert -ca /srv/hasICA.pem -ca-key /shared/hasICA-key.pem -config=config.json -profile="server" destek.csr.json |cfssljson -bare /shared/destek
 
 cat /srv/hasICA.pem /srv/hasCA.pem > /srv/hasCA-chain.pem
 
