@@ -1,5 +1,5 @@
 # CFSSL
-
+````
 docker run -ti -v c:\docker/srv:/shared cfssl /bin/sh
 cfssl gencert -initca ca_csr.json  | cfssljson -bare /shared/hasCA
 
@@ -17,5 +17,5 @@ cat /srv/hasICA.pem /srv/hasCA.pem > /srv/hasCA-chain.pem
 
 openssl verify -CAfile hasCA-chain.pem /serv/destek.pem
 cat /srv/hasICA.pem /srv/hasCA.pem > /srv/hasCA-chain.pem
-
+````
 https://propellered.com/2017/11/13/cfssl_setting_up/
