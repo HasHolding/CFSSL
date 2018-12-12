@@ -1,4 +1,18 @@
 # CFSSL
+
+|Go.x509.KeyUsage|CFSSL config.json| id-ce-keyUsage|Comment|
+|-----|-----|-----|-----|
+|KeyUsageDigitalSignatureKeyUsage|digital signature|digitalSignature||
+|KeyUsageContentCommitment|content commitment|nonRepudiation|recent editions of X.509 have renamed this bit to contentCommitment|
+|KeyUsageKeyEncipherment|key encipherment|keyEncipherment||
+|KeyUsageDataEncipherment|key agreement|dataEncipherment||
+|KeyUsageKeyAgreement|data encipherment|keyAgreement||
+|KeyUsageCertSign|cert sign|keyCertSign||
+|KeyUsageCRLSign|crl sign|cRLSign||
+|KeyUsageEncipherOnly|encipher only|encipherOnly||
+|KeyUsageDecipherOnly|decipher only|decipherOnly||
+
+
 ````
 docker run -ti -v c:\docker/srv:/shared cfssl /bin/sh
 cfssl gencert -initca ca_csr.json  | cfssljson -bare /shared/hasCA
